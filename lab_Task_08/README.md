@@ -1,1 +1,9 @@
-
+Image Restoration and Noise Analysis (Lab 8)
+This project demonstrates various image restoration techniques using Python. The goal is to understand how different types of noise affect digital images and which mathematical filters are most effective at restoring the original content.
+📋 Tasks OverviewNoise Induction: Applied Gaussian noise, Salt & Pepper noise, and Motion Blur to a grayscale image.Filtering: Implemented Median, Wiener, and Inverse filtering techniques.Motion Deblurring: Restored images specifically degraded by linear motion.Quantitative Analysis: Calculated Peak Signal-to-Noise Ratio (PSNR) to measure restoration quality.Evaluation: Identified the optimal restoration method for each specific degradation type.
+🛠️ Technologies UsedPython 3.xOpenCV: For image I/O and spatial filtering (Median blur).NumPy: For matrix manipulation and noise generation.Scikit-Image: For advanced restoration (Wiener filter) and PSNR metrics.Matplotlib: For visual comparison of results.
+🧪 Restoration Methods & ResultsNoise TypeApplied FilterOutcomeGaussianWiener FilterEffectively reduced statistical noise while maintaining edges.Salt & PepperMedian FilterSuccessfully removed "impulse" pixels without blurring the entire image.Motion BlurInverse/WienerReconstructed pixel paths using a Point Spread Function (PSF) kernel.
+📊 Performance Metric (PSNR)The restoration quality is measured using the PSNR formula:$$PSNR = 10 \cdot \log_{10}\left(\frac{MAX_I^2}{MSE}\right)$$Higher PSNR indicates a restoration closer to the original image.Lower MSE (Mean Squared Error) represents less error between the original and processed pixels.
+🚀 How to RunClone this repository.Ensure you have the required libraries installed:Bashpip install numpy opencv-python matplotlib scikit-image
+Place your target image in the root folder and name it input_image.jpg.Run the script:Bashpython image_restoration.py
+📝 ConclusionBased on the results, the Median Filter is the superior choice for Salt & Pepper noise, while the Wiener Filter provides the best balance between noise suppression and detail preservation for Gaussian noise and Motion Blur.
